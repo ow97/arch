@@ -1,13 +1,26 @@
 sudo rkhunter --propupd
-sudo nano /etc/pacman.conf
-<->	[multilib]
-<->	include = /etc/pacman.d/mirrorlist
-
-sudo pacmatic -Syu
 
 mkdir git
 cd git
 git clone https://github.com/ow97/config
+
+cd .config
+ln -sf ~/git/config/xinitrc ~/.xinitrc
+mkdir i3
+ln -sf ~/git/config/i3 ~/.config/i3/config
+mkdir i3blocks
+ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
+mkdir termite
+ln -sf ~/git/config/termite ~/.config/termite/config
+mkdir ranger
+ln -sf ~/git/config/ranger ~/.config/ranger/rc.conf
+mkdir fontconfig
+ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
+sudo ln -sf ~/git/config/pacman /etc/pacman.conf
+cd ..
+
+sudo pacmatic -Syu
+
 gpg --recv-key 1EB2638FF56C0C53
 git clone https://aur.archlinux.org/cower
 cd cower
@@ -18,24 +31,15 @@ cd pacaur
 makepkg -si
 cd ../..
 
-sudo pacman -S wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-anonymous ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts-pro feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom qemu virt-manager texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra
+sudo pacman -S maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-anonymous ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts-pro feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom qemu virt-manager texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra
 gpg --recv-key 5CC908FDB71E12C2
 pacaur -y i3-gaps jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
 
-ranger --copy-config=all
 wget -O background.jpg https://goo.gl/UTLvpN
 sudo systemctl enable libvirtd.service
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
-
-ln -sf ~/git/config/xinitrc ~/.xinitrc
-mkdir .config/i3
-ln -sf ~/git/config/i3 ~/.config/i3/config
-mkdir .config/termite
-ln -sf ~/git/config/termite ~/.config/termite/config
-mkdir ~/.config/fontconfig
-ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 
 sudo reboot
 
