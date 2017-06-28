@@ -19,7 +19,11 @@ ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 cd ..
 
+read -n 1 -s -p "1 Press any key to continue"
+
 sudo pacman --noconfirm -S ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
+
+read -n 1 -s -p "2 Press any key to continue"
 
 git clone https://aur.archlinux.org/cower
 cd cower
@@ -32,11 +36,14 @@ cd pacaur
 makepkg -si
 cd ../..
 
+read -n 1 -s -p "3 Press any key to continue"
+
 gpg --recv-key 5CC908FDB71E12C2
 pacaur -y i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
 
+read -n 1 -s -p "4 Press any key to continue"
+
 wget -O background.jpg https://goo.gl/UTLvpN
-sudo systemctl enable libvirtd.service
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
@@ -45,6 +52,8 @@ mkdir ~/screenshots
 
 sudo pacmatic --noconfirm -Syu
 sudo pacman --noconfirm -Rns
+
+read -n 1 -s -p "5 Press any key to continue"
 
 sudo rkhunter --propupd
 
