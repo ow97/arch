@@ -10,9 +10,9 @@ mount /dev/sda1 /mnt
 pacstrap /mnt base linux-hardened intel-ucode grub sudo git
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
-curl -o /tmp/chroot https://goo.gl/BUpYTb
+curl -L -o /tmp/chroot https://goo.gl/BUpYTb
 bash /tmp/chroot
 exit
 reboot
-curl -o /tmp/setup https://goo.gl/HB7pH8
+curl -L -o /tmp/setup https://goo.gl/HB7pH8
 bash /tmp/setup
