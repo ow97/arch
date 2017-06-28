@@ -1,29 +1,9 @@
-loadkeys uk
-timedatectl set-ntp true
-fdisk /dev/sda
-	n
-	p
-	<Enter> * 3
-	w
-mkfs.ext4 /dev/sda1
-mount /dev/sda1 /mnt
-nano /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux-hardened intel-ucode grub ntfs-3g sudo rkhunter pacmatic git ntp jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
-export EDITOR=nano
-ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
-hwclock --systohc
-nano /etc/locale.gen
-locale-gen
-echo LANG=en_GB.UTF-8 >> /etc/locale.conf
-echo KEYMAP=uk >> /etc/vconsole.conf
-echo archlinux-desktop >> /etc/hostname
-grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-passwd
-useradd -m -G wheel oliver
-passwd oliver
-visudo
-exit
+cp chroot /mnt/tmp/chroot
+cp setup /mnt/setup
+arch-chroot /mnt ./tmp/chroot
+
+echo "Going for reboot..."
+sleep 100
 reboot

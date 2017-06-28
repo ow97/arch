@@ -1,0 +1,14 @@
+export EDITOR=nano
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+hwclock --systohc
+nano /etc/locale.gen
+locale-gen
+echo LANG=en_GB.UTF-8 >> /etc/locale.conf
+echo KEYMAP=uk >> /etc/vconsole.conf
+echo archlinux-desktop >> /etc/hostname
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+passwd
+useradd -m -G wheel oliver
+passwd oliver
+echo "oliver  ALL=(ALL) ALL" >> /etc/sudoers

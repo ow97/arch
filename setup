@@ -46,8 +46,8 @@ git config --global user.name "ow97"
 
 mkdir ~/screenshots
 
+sudo rm -f /setup
+
 sudo reboot
 
 # Enable chromium flags "Override software rendering list", "GPU rasterization", "Zero-copy rasterizer"
-# Sort out Jetbrains fonts
-# Launch pavcontrol and unmute appropriate channels (and (re)set COnfiguration to Analog Stereo Duplex)
