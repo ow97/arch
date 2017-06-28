@@ -1,21 +1,20 @@
 cd ~
 
+mkdir .config
 mkdir git
 cd git
 
 git clone https://github.com/ow97/config
-mkdir .config
-cd .config
 ln -sf ~/git/config/xinitrc ~/.xinitrc
-mkdir i3
+mkdir ~/.config/i3
 ln -sf ~/git/config/i3 ~/.config/i3/config
-mkdir i3blocks
+mkdir ~/.config/i3blocks
 ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
-mkdir termite
+mkdir ~/.config/termite
 ln -sf ~/git/config/termite ~/.config/termite/config
-mkdir ranger
+mkdir ~/.config/ranger
 ln -sf ~/git/config/ranger ~/.config/ranger/rc.conf
-mkdir fontconfig
+mkdir ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 cd ..
