@@ -14,3 +14,5 @@ curl -o /tmp/chroot https://goo.gl/BUpYTb
 bash /tmp/chroot
 exit
 reboot
+curl -o /tmp/setup https://goo.gl/HB7pH8
+bash /tmp/setup
