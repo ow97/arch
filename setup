@@ -1,3 +1,5 @@
+cd ~
+
 sudo rkhunter --propupd
 
 mkdir git
@@ -40,6 +42,8 @@ sudo systemctl enable libvirtd.service
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
+
+mkdir ~/screenshots
 
 sudo reboot
 
