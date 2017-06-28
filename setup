@@ -19,7 +19,7 @@ ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 cd ..
 
-sudo pacman -S ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
+sudo pacman --noconfirm -S ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
 
 git clone https://aur.archlinux.org/cower
 cd cower
@@ -43,8 +43,8 @@ git config --global user.name "ow97"
 
 mkdir ~/screenshots
 
-sudo pacmatic -Syu
-sudo pacman -Rns
+sudo pacmatic --noconfirm -Syu
+sudo pacman --noconfirm -Rns
 
 sudo rkhunter --propupd
 
