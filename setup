@@ -1,7 +1,5 @@
 cd ~
 
-sudo rkhunter --propupd
-
 mkdir git
 cd git
 
@@ -46,7 +44,9 @@ git config --global user.name "ow97"
 
 mkdir ~/screenshots
 
-sudo rm -f /setup
+sudo pacmatic -Rns
+
+sudo rkhunter --propupd
 
 sudo reboot
 
