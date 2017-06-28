@@ -17,7 +17,6 @@ ln -sf ~/git/config/ranger ~/.config/ranger/rc.conf
 mkdir ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
-cd ..
 
 read -n 1 -s -p "1 Press any key to continue"
 
