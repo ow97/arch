@@ -7,3 +7,10 @@ fdisk /dev/sda
 	w
 mkfs.ext4 /dev/sda1
 mount /dev/sda1 /mnt
+pacstrap /mnt base linux-hardened intel-ucode grub sudo git
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+curl -o /tmp/chroot https://goo.gl/BUpYTb
+bash /tmp/chroot
+exit
+reboot

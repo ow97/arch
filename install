@@ -1,9 +1,0 @@
-pacstrap /mnt base base-devel linux-hardened intel-ucode grub ntfs-3g sudo rkhunter pacmatic git ntp jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit
-genfstab -U /mnt >> /mnt/etc/fstab
-cp chroot /mnt/tmp/chroot
-cp setup /mnt/setup
-arch-chroot /mnt ./tmp/chroot
-
-echo "Going for reboot..."
-sleep 100
-reboot
