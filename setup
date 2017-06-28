@@ -4,6 +4,7 @@ mkdir git
 cd git
 
 git clone https://github.com/ow97/config
+mkdir .config
 cd .config
 ln -sf ~/git/config/xinitrc ~/.xinitrc
 mkdir i3

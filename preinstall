@@ -14,5 +14,6 @@ curl -L -o /tmp/chroot https://goo.gl/BUpYTb
 bash /tmp/chroot
 exit
 reboot
+sudo systemctl start dhcpcd.service
 curl -L -o /tmp/setup https://goo.gl/HB7pH8
 bash /tmp/setup
