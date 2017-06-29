@@ -22,7 +22,7 @@ chmod +x /usr/lib/i3blocks/ssid
 sudo chown root /usr/lib/i3blocks/ssid
 sudo chgrp root /usr/lib/i3blocks/ssid
 
-#sudo pacman --noconfirm -Syy ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
+#sudo pacman --noconfirm -Syy sysstat acpi ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
 sudo pacman --noconfirm -Syy sysstat acpi rkhunter pacmatic xorg xorg-xinit base-devel maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom gnuplot openssh sshfs ghostscript
 sudo pacman --noconfirm -Rns xorg-xbacklight
 
