@@ -53,7 +53,7 @@ git config --global user.name "ow97"
 mkdir ~/screenshots
 
 sudo pacmatic --noconfirm -Syu
-sudo pacman --noconfirm -Rns
+sudo pacman --noconfirm -Rns $(pacman -Qtdq)
 
 read -n 1 -s -p "5 Press any key to continue"
 
