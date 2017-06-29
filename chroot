@@ -12,3 +12,4 @@ passwd
 useradd -m -G wheel oliver
 passwd oliver
 echo "oliver  ALL=(ALL) ALL" >> /etc/sudoers
+echo "oliver $HOSTNAME = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers
