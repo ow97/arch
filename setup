@@ -40,6 +40,8 @@ gpg --recv-key 5CC908FDB71E12C2
 pacaur --noedit --noconfirm -y oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth
 
 wget -O background.jpg https://goo.gl/UTLvpN
+wget -O lock.jpg https://goo.gl/2FMLPe
+
 
 sudo ln -sf ~/git/config/ssid /usr/lib/i3blocks/ssid
 chmod +x /usr/lib/i3blocks/ssid
