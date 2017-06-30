@@ -39,14 +39,15 @@ makepkg -si --noconfirm
 cd ../..
 
 gpg --recv-key 5CC908FDB71E12C2
-#pacaur --noedit --noconfirm -y i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
-pacaur --noedit --noconfirm -y i3-gaps acpilight jetbrains-toolbox google-earth
+#pacaur --noedit --noconfirm -y oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
+pacaur --noedit --noconfirm -y oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth
 
 wget -O background.jpg https://goo.gl/UTLvpN
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
 sudo systemctl enable wicd.service
+cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
 
 mkdir ~/screenshots
 
