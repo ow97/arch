@@ -6,6 +6,7 @@ mkdir uni
 cd git
 
 git clone https://github.com/ow97/config
+ln -sf ~/git/config/bash ~/.bashrc
 ln -sf ~/git/config/xinitrc ~/.xinitrc
 mkdir ~/.config/i3
 ln -sf ~/git/config/i3 ~/.config/i3/config
