@@ -36,8 +36,8 @@ makepkg -si --noconfirm
 cd ../..
 
 gpg --recv-key 5CC908FDB71E12C2
-#pacaur --noedit --noconfirm -y oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
-pacaur --noedit --noconfirm -y oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth
+#pacaur --noedit --noconfirm -y tor-browser oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
+pacaur --noedit --noconfirm -y tor-browser oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth
 
 wget -O background.jpg https://goo.gl/UTLvpN
 wget -O lock.jpg https://goo.gl/2FMLPe
