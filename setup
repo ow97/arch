@@ -48,7 +48,7 @@ pacaur --noedit --noconfirm -y tor-browser i3-gaps acpilight jetbrains-toolbox g
 #pacaur --noedit --noconfirm -y tor-browser i3-gaps acpilight jetbrains-toolbox google-earth
 
 wget -O background.jpg https://goo.gl/UTLvpN
-wget -O lock.jpg https://goo.gl/2FMLPe
+wget -O lock.png https://goo.gl/2FMLPe
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
