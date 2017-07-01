@@ -1,31 +1,8 @@
 cd ~
 
 mkdir git
+mkdir screenshots
 mkdir uni
-
-sudo pacman --noconfirm -Syy xarchiver p7zip zip unzip unrar xdotool sysstat acpi ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
-#sudo pacman --noconfirm -Syy xarchiver p7zip zip unzip unrar xdotool sysstat acpi rkhunter pacmatic xorg xorg-xinit base-devel maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom gnuplot openssh sshfs ghostscript
-sudo pacman --noconfirm -Rns xorg-xbacklight
-
-cd ~/git
-git clone https://aur.archlinux.org/cower
-cd cower
-gpg --recv-keys 1EB2638FF56C0C53
-makepkg -si --noconfirm
-cd ~/git
-
-git clone https://aur.archlinux.org/pacaur
-cd pacaur
-makepkg -si --noconfirm
-cd ~
-
-gpg --recv-keys D1483FA6C3C07136
-gpg --recv-keys 5CC908FDB71E12C2
-pacaur --noedit --noconfirm -y tor-browser oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
-#pacaur --noedit --noconfirm -y tor-browser oh-my-zsh i3-gaps acpilight jetbrains-toolbox google-earth
-
-wget -O background.jpg https://goo.gl/UTLvpN
-wget -O lock.jpg https://goo.gl/2FMLPe
 
 cd ~/git
 git clone https://github.com/ow97/config
@@ -43,22 +20,42 @@ ln -sf ~/git/config/ranger ~/.config/ranger/rc.conf
 mkdir ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
+sudo mkdir /usr/lib/i3blocks
 sudo ln -sf ~/git/config/ssid /usr/lib/i3blocks/ssid
 chmod +x /usr/lib/i3blocks/ssid
 sudo chown root /usr/lib/i3blocks/ssid
 sudo chgrp root /usr/lib/i3blocks/ssid
 cd ~
 
+sudo pacman --noconfirm -Syy xarchiver p7zip zip unzip unrar xdotool sysstat acpi ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
+#sudo pacman --noconfirm -Syy xarchiver p7zip zip unzip unrar xdotool sysstat acpi rkhunter pacmatic xorg xorg-xinit base-devel maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom gnuplot openssh sshfs ghostscript
+sudo pacman --noconfirm -Rns xorg-xbacklight
+
+cd ~/git
+git clone https://aur.archlinux.org/cower
+cd cower
+gpg --recv-keys 1EB2638FF56C0C53
+makepkg -si --noconfirm
+cd ~/git
+git clone https://aur.archlinux.org/pacaur
+cd pacaur
+makepkg -si --noconfirm
+cd ~
+
+gpg --recv-keys D1483FA6C3C07136
+gpg --recv-keys 5CC908FDB71E12C2
+pacaur --noedit --noconfirm -y tor-browser i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
+#pacaur --noedit --noconfirm -y tor-browser i3-gaps acpilight jetbrains-toolbox google-earth
+
+wget -O background.jpg https://goo.gl/UTLvpN
+wget -O lock.jpg https://goo.gl/2FMLPe
+
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
 sudo systemctl enable wicd.service
-cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
-
-mkdir ~/screenshots
 
 sudo pacmatic --noconfirm -Syu
 sudo pacman --noconfirm -Rns $(pacman -Qtdq)
-
 sudo rkhunter --propupd
 
 sudo reboot
