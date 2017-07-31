@@ -22,7 +22,7 @@ ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 cd ~
 
-sudo pacman --noconfirm -Syy openxenmanager php-cgi rsync numlockx xarchiver p7zip zip unzip unrar xdotool sysstat acpi ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
+sudo pacman --noconfirm -Syy php-cgi rsync numlockx xarchiver p7zip zip unzip unrar xdotool sysstat acpi ntp rkhunter pacmatic jdk8-openjdk openjdk8-doc openjdk8-src xorg xorg-xinit base-devel ntfs-3g maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh gimp ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom texstudio texlive-most gnuplot openssh sshfs hugin josm ghostscript geogebra linux-headers linux-hardened-headers virtualbox virtualbox-host-dkms
 #sudo pacman --noconfirm -Syy php-cgi rsync numlockx xarchiver p7zip zip unzip unrar xdotool sysstat acpi rkhunter pacmatic xorg xorg-xinit base-devel maim wget htop wicd wicd-gtk i3blocks i3lock dmenu compton termite ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts feh ranger w3m highlight atool lynx poppler mediainfo chromium pulseaudio pavucontrol atom gnuplot openssh sshfs ghostscript
 sudo pacman --noconfirm -Rns xorg-xbacklight
 
@@ -39,8 +39,8 @@ cd ~
 
 gpg --recv-keys D1483FA6C3C07136
 gpg --recv-keys 5CC908FDB71E12C2
-pacaur --noedit --noconfirm -y openxenmanager-git chromium-widevine tor-browser i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli dotnet-sdk msbuild-15-bin
-#pacaur --noedit --noconfirm -y openxenmanager-git chromium-widevine tor-browser i3-gaps acpilight jetbrains-toolbox google-earth
+pacaur --noedit --noconfirm -y chromium-widevine tor-browser i3-gaps acpilight jetbrains-toolbox google-earth dotnet dotnet-cli-git dotnet-sdk-2.0 msbuild-15-bin
+#pacaur --noedit --noconfirm -y chromium-widevine tor-browser i3-gaps acpilight jetbrains-toolbox google-earth
 
 wget -O background.jpg https://goo.gl/UTLvpN
 wget -O lock.png https://goo.gl/2FMLPe
