@@ -6,6 +6,7 @@ mkdir uni
 
 cd ~/git
 git clone https://github.com/ow97/config
+chmod +x config/scope.sh
 ln -sf ~/git/config/bash ~/.bashrc
 ln -sf ~/git/config/xinitrc ~/.xinitrc
 mkdir ~/.config
@@ -58,7 +59,6 @@ sudo pacman --noconfirm -S ntp
 
 sudo pacman --noconfirm -S feh
 sudo pacman --noconfirm -S gimp
-sudo pacman --noconfirm -S w3m
 
 sudo pacman --noconfirm -S highlight
 sudo pacman --noconfirm -S atool
@@ -67,6 +67,7 @@ sudo pacman --noconfirm -S poppler
 sudo pacman --noconfirm -S mediainfo
 
 sudo pacman --noconfirm -S chromium
+sudo pacman --noconfirm -S libreoffice-fresh
 sudo pacman --noconfirm -S atom
 sudo pacman --noconfirm -S texstudio texlive-most
 sudo pacman --noconfirm -S ghostscript
