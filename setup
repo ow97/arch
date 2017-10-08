@@ -102,7 +102,7 @@ pacaur --noedit --noconfirm -y jetbrains-toolbox
 pacaur --noedit --noconfirm -y google-earth
 pacaur --noedit --noconfirm -y tor-browser
 pacaur --noedit --noconfirm -y chromium-widevine
-pacaur --noedit --noconfirm -y dotnet dotnet-cli-git dotnet-sdk-2.0 msbuild-15-bin
+#pacaur --noedit --noconfirm -y dotnet dotnet-cli-git dotnet-sdk-2.0 msbuild-15-bin
 
 wget -O background.jpg https://goo.gl/UTLvpN
 wget -O lock.png https://goo.gl/2FMLPe
