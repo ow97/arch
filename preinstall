@@ -10,10 +10,11 @@ mount /dev/sda1 /mnt
 pacstrap /mnt base linux-hardened intel-ucode grub sudo git
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
-curl -L -o /tmp/chroot https://goo.gl/BUpYTb
+BASE=https://raw.githubusercontent.com/ow97/arch/master
+curl -L -o /tmp/chroot $BASE/chroot
 bash /tmp/chroot
 exit
 reboot
 sudo systemctl start dhcpcd.service
-curl -L -o /tmp/setup https://goo.gl/HB7pH8
+curl -L -o /tmp/setup $BASE/setup
 bash /tmp/setup

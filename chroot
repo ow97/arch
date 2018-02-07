@@ -12,4 +12,3 @@ passwd
 useradd -m -G wheel oliver
 passwd oliver
 echo "oliver ALL=(ALL) ALL" >> /etc/sudoers
-echo "oliver archlinux-desktop = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers

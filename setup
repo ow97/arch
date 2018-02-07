@@ -6,7 +6,7 @@ mkdir uni
 
 cd ~/git
 git clone https://github.com/ow97/config
-chmod +x config/scope.sh
+git clone https://github.com/ow97/arch
 ln -sf ~/git/config/bash ~/.bashrc
 ln -sf ~/git/config/xinitrc ~/.xinitrc
 mkdir ~/.config
@@ -16,96 +16,22 @@ mkdir ~/.config/i3blocks
 ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
 mkdir ~/.config/termite
 ln -sf ~/git/config/termite ~/.config/termite/config
-mkdir ~/.config/ranger
-ln -sf ~/git/config/ranger ~/.config/ranger/rc.conf
 mkdir ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 cd ~
 
 sudo pacman -Syy
-
-sudo pacman --noconfirm -S base-devel
-sudo pacman --noconfirm -S jdk8-openjdk openjdk8-doc openjdk8-src
-sudo pacman --noconfirm -S ntfs-3g
-sudo pacman --noconfirm -S php-cgi
-
-sudo pacman --noconfirm -S xorg xorg-xinit
-sudo pacman --noconfirm -S i3lock
-sudo pacman --noconfirm -S i3blocks
-sudo pacman --noconfirm -S compton
-sudo pacman --noconfirm -S numlockx
-sudo pacman --noconfirm -S xdotool
-sudo pacman --noconfirm -S maim
-
-sudo pacman --noconfirm -S pulseaudio pavucontrol
-sudo pacman --noconfirm -S wicd wicd-gtk
-sudo pacman --noconfirm -S dmenu
-sudo pacman --noconfirm -S termite
-sudo pacman --noconfirm -S ranger
-sudo pacman --noconfirm -S htop
-sudo pacman --noconfirm -S sysstat
-
-sudo pacman --noconfirm -S wget
-sudo pacman --noconfirm -S rsync
-sudo pacman --noconfirm -S xarchiver p7zip zip unzip unrar
-sudo pacman --noconfirm -S rkhunter
-sudo pacman --noconfirm -S pacmatic
-sudo pacman --noconfirm -S openssh
-sudo pacman --noconfirm -S sshfs
-
-sudo pacman --noconfirm -S acpi
-sudo pacman --noconfirm -S ntp
-
-sudo pacman --noconfirm -S feh
-sudo pacman --noconfirm -S gimp
-
-sudo pacman --noconfirm -S highlight
-sudo pacman --noconfirm -S atool
-sudo pacman --noconfirm -S lynx
-sudo pacman --noconfirm -S poppler
-sudo pacman --noconfirm -S mediainfo
-
-sudo pacman --noconfirm -S chromium
-sudo pacman --noconfirm -S libreoffice-fresh
-sudo pacman --noconfirm -S atom
-sudo pacman --noconfirm -S texstudio texlive-most
-sudo pacman --noconfirm -S ghostscript
-sudo pacman --noconfirm -S gnuplot
-sudo pacman --noconfirm -S geogebra
-sudo pacman --noconfirm -S hugin
-sudo pacman --noconfirm -S josm
-
-sudo pacman --noconfirm -S linux-headers linux-hardened-headers
-sudo pacman --noconfirm -S virtualbox virtualbox-host-dkms
-
-sudo pacman --noconfirm -S ttf-roboto adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
-
-sudo pacman --noconfirm -Rns xorg-xbacklight
+xargs sudo pacman --noconfirm -S < packages
 
 cd ~/git
-git clone https://aur.archlinux.org/cower
-cd cower
-gpg --recv-keys 1EB2638FF56C0C53
-makepkg -si --noconfirm
-cd ~/git
-git clone https://aur.archlinux.org/pacaur
-cd pacaur
-makepkg -si --noconfirm
-cd ~
+git clone https://github.com/actionless/pikaur.git
+cd pikaur
+makepkg -fsri
 
 gpg --recv-keys D1483FA6C3C07136
 gpg --recv-keys 5CC908FDB71E12C2
-pacaur --noedit --noconfirm -y i3-gaps
-pacaur --noedit --noconfirm -y acpilight
-pacaur --noedit --noconfirm -y jetbrains-toolbox
-pacaur --noedit --noconfirm -y google-earth
-pacaur --noedit --noconfirm -y tor-browser
-pacaur --noedit --noconfirm -y chromium-widevine
-#pacaur --noedit --noconfirm -y dotnet dotnet-cli-git dotnet-sdk-2.0 msbuild-15-bin
-
-wget -O background.jpg https://goo.gl/UTLvpN
-wget -O lock.png https://goo.gl/2FMLPe
+xargs pacaur --noedit --noconfirm -y < aur_packages
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
@@ -113,7 +39,6 @@ sudo systemctl enable wicd.service
 
 sudo pacmatic --noconfirm -Syu
 sudo pacman --noconfirm -Rns $(pacman -Qtdq)
-sudo rkhunter --propupd
 
 sudo reboot
 
