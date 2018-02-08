@@ -31,13 +31,13 @@ makepkg -fsri
 
 gpg --recv-keys D1483FA6C3C07136
 gpg --recv-keys 5CC908FDB71E12C2
+
 xargs pacaur --noedit --noconfirm -y < aur_packages
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
 sudo systemctl enable wicd.service
 
-sudo pacmatic --noconfirm -Syu
 sudo pacman --noconfirm -Rns $(pacman -Qtdq)
 
 sudo reboot
