@@ -12,7 +12,7 @@ bc
 compton
 cython
 dialog
-fakeroot
+evtest
 feh
 firefox
 flex
@@ -23,11 +23,15 @@ gnuplot
 grub
 htop
 hugin
+hunspell-en
 i3-gaps
 i3blocks
 i3lock
 intel-ucode
 iputils
+java-openjfx
+java-openjfx-doc
+java-openjfx-src
 jdk8-openjdk
 jfsutils
 libreoffice-fresh
@@ -70,6 +74,7 @@ rsync
 s-nail
 sqlmap
 sshfs
+stress
 swi-prolog
 sysstat
 systemd-sysvcompat
@@ -98,6 +103,7 @@ wicd-gtk
 wireshark-qt
 x2goclient
 xarchiver
+xclip
 xdotool
 xf86-video-vesa
 xfsprogs
