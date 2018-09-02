@@ -17,7 +17,7 @@ ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
 mkdir ~/.config/termite
 ln -sf ~/git/config/termite ~/.config/termite/config
 mkdir ~/.config/redshift
-ln -sf ~/git/config/redshift.conf ~/.config/redshift/redshift.conf
+ln -sf ~/git/config/redshift ~/.config/redshift/redshift.conf
 mkdir ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
