@@ -1,7 +1,6 @@
-# Perform these steps manually to complete the installation
+## Perform these steps manually to complete the installation
 
 loadkeys uk
-timedatectl set-ntp true
 
 fdisk /dev/sda
 	n
@@ -11,14 +10,12 @@ fdisk /dev/sda
 mkfs.ext4 /dev/sda1
 mount /dev/sda1 /mnt
 
-pacstrap /mnt base linux-hardened intel-ucode grub sudo git
-
-genfstab -U /mnt >> /mnt/etc/fstab
+cd /tmp
+curl -L https://git.io/fAldf > base
+bash base
 
 arch-chroot /mnt
-cd /tmp
-curl -L https://git.io/fAlQf > chroot
-bash chroot
+bash /tmp/chroot
 
 exit
 reboot
