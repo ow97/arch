@@ -47,16 +47,13 @@ sudo pacman -Syy
 xargs sudo pacman --noconfirm -S < "$script_dir/packages"
 
 # Install pikaur
-cd ~/git
-git clone https://github.com/actionless/pikaur.git
+cd /tmp
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/pikaur.git
 cd pikaur
-makepkg -fsri
+makepkg -frsi --noconfirm
 
-# Setup AUR keys
-gpg --recv-keys D1483FA6C3C07136
-gpg --recv-keys 5CC908FDB71E12C2
-
-# AUR packages
+# Install AUR packages
 xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
 
 # Cleanup dependencies
