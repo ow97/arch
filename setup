@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x
+set -ex
 script_dir="$(cd "$(dirname "$0")"; pwd;)";
 
 ###############################################################################
@@ -60,7 +60,7 @@ gpg --recv-keys 5CC908FDB71E12C2
 xargs pacaur --noedit --noconfirm -y < "$script_dir/aur_packages"
 
 # Cleanup dependencies
-pacman -Qtdq | sudo pacman --noconfirm -Rns - 
+pacman -Qtdq | sudo pacman --noconfirm -Rns - || true
 
 ###############################################################################
 # Configure git
