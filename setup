@@ -1,47 +1,87 @@
-cd ~
+#!/usr/bin/env bash
+set -x
+script_dir="$(cd "$(dirname "$0")"; pwd;)";
 
-mkdir git
-mkdir screenshots
-mkdir uni
+###############################################################################
+# Create directories
+###############################################################################
+
+mkdir -p ~/git
+mkdir -p ~/screenshots
+
+###############################################################################
+# Deploy config files
+###############################################################################
 
 cd ~/git
 git clone https://github.com/ow97/config
 git clone https://github.com/ow97/arch
+
 ln -sf ~/git/config/bash ~/.bashrc
+
 ln -sf ~/git/config/xinitrc ~/.xinitrc
-mkdir ~/.config
-mkdir ~/.config/i3
+
+mkdir -p ~/.config/i3
 ln -sf ~/git/config/i3 ~/.config/i3/config
-mkdir ~/.config/i3blocks
+
+mkdir -p ~/.config/i3blocks
 ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
-mkdir ~/.config/termite
+
+mkdir -p ~/.config/termite
 ln -sf ~/git/config/termite ~/.config/termite/config
-mkdir ~/.config/redshift
+
+mkdir -p ~/.config/redshift
 ln -sf ~/git/config/redshift ~/.config/redshift/redshift.conf
-mkdir ~/.config/fontconfig
+
+mkdir -p ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
+
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
-cd ~
 
+###############################################################################
+# Install packages
+###############################################################################
+
+# Official repos
 sudo pacman -Syy
-xargs sudo pacman --noconfirm -S < packages
+xargs sudo pacman --noconfirm -S < "$script_dir/packages"
 
+# Install pikaur
 cd ~/git
 git clone https://github.com/actionless/pikaur.git
 cd pikaur
 makepkg -fsri
 
+# Setup AUR keys
 gpg --recv-keys D1483FA6C3C07136
 gpg --recv-keys 5CC908FDB71E12C2
 
-xargs pacaur --noedit --noconfirm -y < aur_packages
+# AUR packages
+xargs pacaur --noedit --noconfirm -y < "$script_dir/aur_packages"
+
+# Cleanup dependencies
+pacman -Qtdq | sudo pacman --noconfirm -Rns - 
+
+###############################################################################
+# Configure git
+###############################################################################
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
+
+###############################################################################
+# Setup services
+###############################################################################
+
 sudo systemctl enable wicd.service
 
-sudo pacman --noconfirm -Rns $(pacman -Qtdq)
+###############################################################################
+# Complete setup
+###############################################################################
 
 sudo reboot
 
-# Enable chromium flags "Override software rendering list", "GPU rasterization", "Zero-copy rasterizer"
+# Enable chromium flags
+#   - Override software rendering list
+#   - GPU rasterization
+#   - Zero-copy rasterizer
