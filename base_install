@@ -3,9 +3,5 @@ set -x
 script_dir="$(cd "$(dirname "$0")"; pwd;)";
 
 timedatectl set-ntp true
-
 pacstrap /mnt base linux-hardened intel-ucode grub sudo git
-
 genfstab -U /mnt >> /mnt/etc/fstab
-
-curl -L -o /mnt/tmp/chroot https://git.io/fAlQf

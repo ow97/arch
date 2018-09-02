@@ -15,7 +15,9 @@ curl -L https://git.io/fAldf > base
 bash base
 
 arch-chroot /mnt
-bash /tmp/chroot
+cd /tmp
+curl -L https://git.io/fAlQf > chroot
+bash chroot
 
 exit
 reboot
