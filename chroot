@@ -39,4 +39,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 passwd
 useradd -m -G wheel oliver
 passwd oliver
+
+echo >> /etc/sudoers
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "ALL $(cat /etc/hostname) = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers

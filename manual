@@ -16,10 +16,14 @@ pacstrap /mnt base linux-hardened intel-ucode grub sudo git
 genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
-curl -L https://git.io/fAlQf | bash
+cd /tmp
+curl -L https://git.io/fAlQf > chroot
+bash chroot
 
 exit
 reboot
 
 sudo systemctl start dhcpcd.service
-curl -L https://git.io/fAlQI | bash
+cd /tmp
+curl -L https://git.io/fAlQI > setup
+bash setup
