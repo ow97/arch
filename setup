@@ -57,7 +57,7 @@ gpg --recv-keys D1483FA6C3C07136
 gpg --recv-keys 5CC908FDB71E12C2
 
 # AUR packages
-xargs sudo pikaur --noconfirm -S < "$script_dir/aur_packages"
+xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
 
 # Cleanup dependencies
 pacman -Qtdq | sudo pacman --noconfirm -Rns - || true
