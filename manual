@@ -1,0 +1,20 @@
+loadkeys uk
+timedatectl set-ntp true
+fdisk /dev/sda
+	n
+	p
+	<Enter> * 3
+	w
+mkfs.ext4 /dev/sda1
+mount /dev/sda1 /mnt
+pacstrap /mnt base linux-hardened intel-ucode grub sudo git
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+BASE=https://raw.githubusercontent.com/ow97/arch/master
+curl -L -o /tmp/chroot $BASE/chroot
+bash /tmp/chroot
+exit
+reboot
+sudo systemctl start dhcpcd.service
+curl -L -o /tmp/setup $BASE/setup
+bash /tmp/setup
