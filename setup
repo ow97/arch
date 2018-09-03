@@ -53,6 +53,9 @@ git clone https://aur.archlinux.org/pikaur.git
 cd pikaur
 makepkg -frsi --noconfirm
 
+# Add keys
+gpg --recv-keys D1483FA6C3C07136 # tor-browser-en
+
 # Install AUR packages
 xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
 
