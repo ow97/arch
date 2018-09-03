@@ -19,7 +19,7 @@ chmod +x /mnt/root/chroot
 arch-chroot /mnt /root/chroot
 
 ################################################################################
-# Chroot into new system and perform initial setup
+# Reboot ready for main setup and install
 ################################################################################
 
 reboot
