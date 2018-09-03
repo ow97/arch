@@ -22,5 +22,4 @@ arch-chroot /mnt /root/chroot
 # Chroot into new system and perform initial setup
 ################################################################################
 
-exit
 reboot
