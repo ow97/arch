@@ -21,4 +21,3 @@
     git clone https://github.com/ow97/arch
     cd arch
     sudo bash system
-    bash user
