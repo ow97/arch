@@ -1,7 +1,5 @@
 # Arch Linux installation scripts
 
-Perform the following steps manually
-
     loadkeys uk
 
     fdisk /dev/sda
