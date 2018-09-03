@@ -39,41 +39,11 @@ ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 
 ###############################################################################
-# Install packages
-###############################################################################
-
-# Official repos
-sudo pacman -Syy
-xargs sudo pacman --noconfirm -S < "$script_dir/packages"
-
-# Install pikaur
-cd /tmp
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/pikaur.git
-cd pikaur
-makepkg -frsi --noconfirm
-
-# Add keys
-gpg --recv-keys D1483FA6C3C07136 # tor-browser-en
-
-# Install AUR packages
-xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
-
-# Cleanup dependencies
-pacman -Qtdq | sudo pacman --noconfirm -Rns - || true
-
-###############################################################################
 # Configure git
 ###############################################################################
 
 git config --global user.email "ow97@users.noreply.github.com"
 git config --global user.name "ow97"
-
-###############################################################################
-# Setup services
-###############################################################################
-
-sudo systemctl enable wicd.service
 
 ###############################################################################
 # Complete setup

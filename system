@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -ex
+script_dir="$(cd "$(dirname "$0")"; pwd;)";
+
+###############################################################################
+# Install packages
+###############################################################################
+
+# Official repos
+pacman -Syy
+xargs pacman --noconfirm -S < "$script_dir/packages"
+
+# Install pikaur
+cd /tmp
+pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/pikaur.git
+cd pikaur
+makepkg -frsi --noconfirm
+
+# Add keys
+gpg --recv-keys D1483FA6C3C07136 # tor-browser-en
+
+# Install AUR packages
+xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
+
+# Cleanup dependencies
+pacman -Qtdq | pacman --noconfirm -Rns - || true
+
+###############################################################################
+# Setup services
+###############################################################################
+
+systemctl enable wicd.service

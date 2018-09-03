@@ -16,8 +16,9 @@
 
     # Login as oliver
 
-    sudo systemctl start dhcpcd.service
+    sudo systemctl start dhcpcd
     cd /tmp
     git clone https://github.com/ow97/arch
     cd arch
-    bash setup
+    sudo bash system
+    bash user
