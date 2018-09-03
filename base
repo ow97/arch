@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -x
+script_dir="$(cd "$(dirname "$0")"; pwd;)";
+
+################################################################################
+# Install base system
+################################################################################
+
+timedatectl set-ntp true
+pacstrap /mnt base linux-hardened intel-ucode grub sudo git
+genfstab -U /mnt >> /mnt/etc/fstab
+
+################################################################################
+# Chroot into new system and perform initial setup
+################################################################################
+
+curl -L https://git.io/fAlQf > /mnt/root/chroot
+chmod +x /mnt/root/chroot
+arch-chroot /mnt /root/chroot
+
+################################################################################
+# Chroot into new system and perform initial setup
+################################################################################
+
+exit
+reboot

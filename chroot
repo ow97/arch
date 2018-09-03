@@ -43,3 +43,9 @@ passwd oliver
 echo >> /etc/sudoers
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 echo "ALL $(cat /etc/hostname) = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers
+
+###############################################################################
+# Cleanup
+###############################################################################
+
+rm /root/chroot

@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -x
-script_dir="$(cd "$(dirname "$0")"; pwd;)";
-
-timedatectl set-ntp true
-pacstrap /mnt base linux-hardened intel-ucode grub sudo git
-genfstab -U /mnt >> /mnt/etc/fstab

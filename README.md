@@ -11,16 +11,8 @@
     mount /dev/sda1 /mnt
 
     cd /tmp
-    curl -L https://git.io/fAldf > base
+    curl -L https://git.io/fA4kF > base
     bash base
-
-    arch-chroot /mnt
-    cd /tmp
-    curl -L https://git.io/fAlQf > chroot
-    bash chroot
-
-    exit
-    reboot
 
     # Login as oliver
 
