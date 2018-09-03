@@ -8,11 +8,11 @@ script_dir="$(cd "$(dirname "$0")"; pwd;)";
 
 # Official repos
 pacman -Syy
-xargs pacman --noconfirm -S < "$script_dir/packages"
+xargs pacman --needed --noconfirm -S < "$script_dir/packages"
 
 # Install pikaur
 cd /tmp
-pacman -S --needed base-devel git
+pacman -S --needed --noconfirm base-devel git
 git clone https://aur.archlinux.org/pikaur.git
 cd pikaur
 makepkg -frsi --noconfirm
@@ -42,4 +42,4 @@ sudo -u oliver oliver
 # Complete setup
 ###############################################################################
 
-sudo reboot	
+sudo reboot
