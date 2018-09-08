@@ -18,7 +18,7 @@ cd pikaur
 sudo -u oliver makepkg -frsi --noconfirm
 
 # Add keys
-gpg --recv-keys D1483FA6C3C07136 # tor-browser-en
+gpg --recv-keys 4E2C6E8793298290 # tor-browser
 
 # Install AUR packages
 xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
