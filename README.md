@@ -14,10 +14,10 @@
     curl -L https://git.io/fA4kF > base
     bash base
 
-    # Login as oliver
+    # Login as root
 
-    sudo systemctl start dhcpcd
+    systemctl start dhcpcd
     cd /tmp
     git clone https://github.com/ow97/arch
     cd arch
-    sudo bash system
+    bash system
