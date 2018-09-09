@@ -11,13 +11,12 @@
     mount /dev/sda1 /mnt
 
     cd /tmp
-    curl -L https://git.io/fA4kF > base
-    bash base
+    git clone https://github.com/ow97/arch
+    arch/base
 
     # Login as root
 
     systemctl start dhcpcd
     cd /tmp
     git clone https://github.com/ow97/arch
-    cd arch
-    bash system
+    arch/system
