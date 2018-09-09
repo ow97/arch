@@ -37,11 +37,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ###############################################################################
 
 passwd
+
 useradd -m -G wheel oliver
 passwd oliver
 
 echo >> /etc/sudoers
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+
+echo >> /etc/sudoers
+echo "# Allow all local users to change screen brightness" >> /etc/sudoers
 echo "ALL $(cat /etc/hostname) = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers
 
 ###############################################################################

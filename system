@@ -6,23 +6,9 @@ script_dir="$(cd "$(dirname "$0")"; pwd;)";
 # Install packages
 ###############################################################################
 
-# Official repos
-pacman -Syy
-xargs pacman --needed --noconfirm -S < "$script_dir/packages"
+"$script_dir/install_official"
 
-# Install pikaur
-cd /tmp
-git clone https://github.com/actionless/pikaur
-cd pikaur
-pacman -S --needed --noconfirm --asdeps pyalpm base-devel
-python3 ./pikaur.py -S --noconfirm pikaur
-cd /tmp
-
-# Add keys
-gpg --recv-keys 4E2C6E8793298290 # tor-browser
-
-# Install AUR packages
-xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
+sudo -u oliver "$script_dir/install_official"
 
 # Cleanup dependencies
 pacman -Qtdq | pacman --noconfirm -Rns - || true
@@ -37,7 +23,7 @@ systemctl enable wicd.service
 # Setup users
 ###############################################################################
 
-sudo -u oliver oliver
+sudo -u oliver "$script_dir/oliver"
 
 ###############################################################################
 # Complete setup

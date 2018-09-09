@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -ex
+script_dir="$(cd "$(dirname "$0")"; pwd;)";
+
+xargs pacman --needed --noconfirm -Sy < "$script_dir/packages"

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -ex
+script_dir="$(cd "$(dirname "$0")"; pwd;)";
+
+# Install pikaur
+cd /tmp
+git clone https://github.com/actionless/pikaur
+cd pikaur
+pacman -S --needed --noconfirm --asdeps pyalpm base-devel
+python3 ./pikaur.py -S --noconfirm pikaur
+
+# Add keys
+gpg --recv-keys 4E2C6E8793298290 # tor-browser
+
+# Install AUR packages
+xargs pikaur --noconfirm -S < "$script_dir/aur_packages"
