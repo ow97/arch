@@ -29,5 +29,5 @@ sudo -u oliver "$script_dir/oliver"
 # Complete setup
 ###############################################################################
 
-sed -i '$ d' /etc/sudoers # Remove temporary sudo blanket permissions
-sudo reboot
+rm /etc/sudoers.d/90-all
+reboot

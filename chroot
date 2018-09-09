@@ -41,16 +41,13 @@ passwd
 useradd -m -G wheel oliver
 passwd oliver
 
-echo >> /etc/sudoers
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.d/00-wheel
 
-echo >> /etc/sudoers
-echo "# Allow all local users to change screen brightness" >> /etc/sudoers
-echo "ALL $(cat /etc/hostname) = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers
+echo "# Allow all local users to change screen brightness" >> /etc/sudoers.d/10-xbacklight
+echo "ALL $(cat /etc/hostname)=(root) NOPASSWD:/usr/bin/xbacklight" >> /etc/sudoers.d/10-xbacklight
 
 # Allow all local users to sudo during install
-echo >> /etc/sudoers
-echo "ALL $(cat /etc/hostname) = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "ALL $(cat /etc/hostname)=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/90-all
 
 ###############################################################################
 # Cleanup
