@@ -48,6 +48,10 @@ echo >> /etc/sudoers
 echo "# Allow all local users to change screen brightness" >> /etc/sudoers
 echo "ALL $(cat /etc/hostname) = (root) NOPASSWD: /usr/bin/xbacklight" >> /etc/sudoers
 
+# Allow all local users to sudo during install
+echo >> /etc/sudoers
+echo "ALL $(cat /etc/hostname) = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 ###############################################################################
 # Cleanup
 ###############################################################################
