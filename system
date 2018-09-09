@@ -6,9 +6,9 @@ script_dir="$(cd "$(dirname "$0")"; pwd;)";
 # Install packages
 ###############################################################################
 
-"$script_dir/install_official"
+bash "$script_dir/install_official"
 
-sudo -u oliver "$script_dir/install_official"
+sudo -u oliver "$script_dir/install_aur"
 
 # Cleanup dependencies
 pacman -Qtdq | pacman --noconfirm -Rns - || true
