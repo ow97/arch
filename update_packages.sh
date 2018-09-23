@@ -12,6 +12,7 @@ echo "${bold}Writing foreign package list...${normal}"
 pacman -Qqettm > ~/git/arch/aur_packages
 
 echo "${bold}Committing updated package lists...${normal}"
-git commit -m "Update package lists" packages aur_packages
 
-echo "${bold}Complete! You may want to git push${normal}"
+echo "${bold}Complete! You may want to:${normal}"
+echo "    git commit -m \"Update package lists\" packages aur_packages"
+echo "    git push"
