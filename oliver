@@ -36,6 +36,9 @@ ln -sf ~/git/config/redshift ~/.config/redshift/redshift.conf
 mkdir -p ~/.config/fontconfig
 ln -sf ~/git/config/fonts ~/.config/fontconfig/fonts.conf
 
+mkdir -p ~/.config/nano
+ln -sf ~/git/config/nano ~/.config/nano/nanorc
+
 sudo ln -sf ~/git/config/pacman /etc/pacman.conf
 
 ###############################################################################
