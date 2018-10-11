@@ -12,6 +12,7 @@ bash-completion
 bc
 biber
 calcurse
+code
 cython
 dialog
 evtest
@@ -42,6 +43,7 @@ java-openjfx-src
 jdk8-openjdk
 jfsutils
 jhead
+jq
 libreoffice-fresh
 licenses
 linux
@@ -67,6 +69,7 @@ openvpn
 p7zip
 pacmatic
 pamixer
+paraview
 patch
 pavucontrol
 php-cgi
@@ -74,7 +77,9 @@ pkgconf
 pulseaudio
 pwgen
 python-pip
+python-redbaron
 python2-numpy
+qemu
 recordmydesktop
 redshift
 reiserfsprogs
@@ -120,7 +125,6 @@ xclip
 xcompmgr
 xdotool
 xf86-video-vesa
-xfsprogs
 xorg-docs
 xorg-fonts-100dpi
 xorg-fonts-75dpi
