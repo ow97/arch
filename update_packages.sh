@@ -1,18 +1,38 @@
 #!/usr/bin/env bash
-bold=$(tput bold)
-normal=$(tput sgr0)
 
-echo "${bold}Cleaning out uneeded dependencies...${normal}"
-pacman -Qdtq | sudo pacman -Rns - >/dev/null 2>&1
+echo "Cleaning out orphaned dependencies..."
+ORPHANS=$(pacman -Qdtq)
+if [[ -n "${ORPHANS}" ]]; then
+    sudo pacman -Rns ${ORPHANS}
+fi
 
-echo "${bold}Writing native package list...${normal}"
+echo "Checking database..."
+sudo pacman -Dkk
+
+echo "Writing native package list..."
 pacman -Qqettn > ~/git/arch/packages
 
-echo "${bold}Writing foreign package list...${normal}"
+echo "Writing foreign package list..."
 pacman -Qqettm > ~/git/arch/aur_packages
 
-echo "${bold}Committing updated package lists...${normal}"
+echo
+git --no-pager diff -U0 packages aur_packages
+echo
 
-echo "${bold}Complete! You may want to:${normal}"
-echo "    git commit -m \"Update package lists\" packages aur_packages"
-echo "    git push"
+while true; do
+    read -p "Do you wish to commit those changes? [yn] " -n 1 yn
+    echo
+
+    case $yn in
+        [Yy]* )
+            echo "Committing changes..."
+            git commit -m \"Update package lists\" packages aur_packages
+            exit;;
+        [Nn]* )
+            echo "Rolling back changes..."
+            git checkout packages aur_packages
+            exit;;
+        * )
+            echo "Please answer y or n" ;;
+    esac;
+done
