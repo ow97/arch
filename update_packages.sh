@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if [[ ! -f packages || ! -f aur_packages ]]; then
+    echo "One or more of packages and aur_packages doesn't exist."
+    echo "Are we in the right directory? Quitting.."
+    exit
+fi
+
 echo "Cleaning out orphaned dependencies..."
 ORPHANS=$(pacman -Qdtq)
 if [[ -n "${ORPHANS}" ]]; then
@@ -10,10 +16,10 @@ echo "Checking database..."
 sudo pacman -Dkk
 
 echo "Writing native package list..."
-pacman -Qqettn > ~/git/arch/packages
+pacman -Qqettn > packages
 
 echo "Writing foreign package list..."
-pacman -Qqettm > ~/git/arch/aur_packages
+pacman -Qqettm > aur_packages
 
 echo
 git --no-pager diff -U0 packages aur_packages
