@@ -32,7 +32,7 @@ while true; do
     case $yn in
         [Yy]* )
             echo "Committing changes..."
-            git commit -m \"Update package lists\" packages aur_packages
+            git commit -m "Update package lists" packages aur_packages
             exit;;
         [Nn]* )
             echo "Rolling back changes..."

@@ -18,7 +18,7 @@ while true; do
     read -p "You should do a system upgrade now [yn] " -n 1 yn
     echo
 
-    case $yn in
+    case ${yn} in
         [Yy]* )
             pacman -Syyuu
             exit;;
