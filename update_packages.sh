@@ -13,7 +13,10 @@ if [[ -n "${ORPHANS}" ]]; then
 fi
 
 echo "Checking database..."
-sudo pacman -Dkk
+sudo pacman -Dk
+
+echo "Checking install consistency..."
+sudo pacman -Qkq
 
 echo "Writing native package list..."
 pacman -Qqettn > packages
