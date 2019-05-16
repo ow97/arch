@@ -1,9 +1,9 @@
 acpi
-adobe-source-code-pro-fonts
 adobe-source-sans-pro-fonts
 adobe-source-serif-pro-fonts
 alsa-firmware
 alsa-utils
+android-file-transfer
 arch-wiki-docs
 autoconf
 automake
@@ -15,6 +15,7 @@ calcurse
 chromium
 cmake
 code
+compton
 cython
 dialog
 evtest
@@ -27,14 +28,15 @@ ghex
 gimp
 gnu-netcat
 gnuplot
+gpsbabel
 grub
+gst-libav
 htop
 hugin
 hunspell-en_GB
 i3-gaps
 i3blocks
 i3lock
-imagemagick
 inkscape
 intel-ucode
 iperf
@@ -46,7 +48,9 @@ java-openjfx-src
 jdk8-openjdk
 jfsutils
 jhead
+josm
 jq
+kdenlive
 libreoffice-fresh
 licenses
 light
@@ -55,12 +59,12 @@ linux-hardened
 linux-hardened-headers
 linux-headers
 logrotate
-lvm2
 maim
 man-pages
 mariadb
-mdadm
+mencoder
 msr-tools
+mtpfs
 nano
 netctl
 nmap
@@ -86,6 +90,7 @@ pwgen
 python-pip
 python-redbaron
 python-scikit-learn
+python-tensorflow-opt
 python2-numpy
 qemu
 recordmydesktop
@@ -103,7 +108,6 @@ sudo
 swi-prolog
 sysstat
 systemd-sysvcompat
-tensorflow
 termite
 testdisk
 texlive-bibtexextra
@@ -134,7 +138,6 @@ wireshark-qt
 x2goclient
 xarchiver
 xclip
-xcompmgr
 xdotool
 xf86-video-vesa
 xorg-docs
@@ -142,7 +145,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-iceauth
 xorg-luit
-xorg-server
 xorg-server-devel
 xorg-server-xdmx
 xorg-server-xephyr
@@ -175,7 +177,7 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xournal
+xournalpp
 youtube-dl
 zbar
 zip
