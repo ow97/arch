@@ -6,16 +6,18 @@ if [[ $EUID != 0 ]]; then
     exit $?
 fi
 
-echo "Getting and ranking up to date mirror list..."
-curl -s 'https://www.archlinux.org/mirrorlist/?country=GB&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on' | \
-    sed -e 's/^#Server/Server/' -e '/^#/d' | \
-    rankmirrors -n 8 - > \
-    /etc/pacman.d/mirrorlist
+echo "Benchmarking and ranking recently synced mirrors..."
+reflector --threads 4 \
+    --protocol https --latest 10 \
+    --fastest 5 --sort rate \
+    --save /etc/pacman.d/mirrorlist
 
 echo "Up to date and ranked mirror list written to /etc/pacman.d/mirrorlist"
+echo
 
 while true; do
-    read -p "You should do a system upgrade now [yn] " -n 1 yn
+    read -p "You should do a full system upgrade now! Continue? [yn] " -n 1 yn
+    echo
     echo
 
     case ${yn} in
