@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 cd "${0%/*}"
 if [[ ! -f packages || ! -f aur_packages ]]; then
