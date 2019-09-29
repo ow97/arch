@@ -9,7 +9,7 @@ if [[ ! -f packages || ! -f aur_packages ]]; then
 fi
 
 echo "Cleaning out orphaned dependencies..."
-ORPHANS=$(pacman -Qdtq)
+ORPHANS="$(pacman -Qdtq || true)"
 if [[ -n "${ORPHANS}" ]]; then
     sudo pacman -Rns ${ORPHANS}
 fi
