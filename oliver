@@ -31,8 +31,8 @@ ln -sf ~/git/config/i3 ~/.config/i3/config
 mkdir -p ~/.config/i3blocks
 ln -sf ~/git/config/i3blocks ~/.config/i3blocks/config
 
-mkdir -p ~/.config/termite
-ln -sf ~/git/config/termite ~/.config/termite/config
+mkdir -p ~/.config/alacritty
+ln -sf ~/git/config/alacritty ~/.config/alacritty/alacritty.yml
 
 mkdir -p ~/.config/redshift
 ln -sf ~/git/config/redshift ~/.config/redshift/redshift.conf

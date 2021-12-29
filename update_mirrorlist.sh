@@ -6,9 +6,13 @@ if [[ $EUID != 0 ]]; then
     exit $?
 fi
 
+if [ -f /etc/pacman.d/mirrorlist.pacnew ]; then
+    echo "Overwriting contents of /etc/pacman.d/mirrorlist with /etc/pacman.d/mirrorlist.pacnew ..."
+    mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+fi
+
 echo "Benchmarking and ranking recently synced mirrors..."
-reflector --threads 4 \
-    --protocol https --latest 10 \
+reflector --protocol https --latest 10 \
     --fastest 5 --sort rate \
     --save /etc/pacman.d/mirrorlist
 
@@ -22,7 +26,7 @@ while true; do
 
     case ${yn} in
         [Yy]* )
-            pacman -Syyuu
+            if which pikaur >/dev/null; then pikaur -Syyuu; else pacman -Syyuu; fi
             exit;;
         [Nn]* )
             echo "Ensure your next update is done with double u flag!"
