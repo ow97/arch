@@ -1,10 +1,8 @@
-autotrace
 bloaty
 cinclude2dot
 clevo-xsm-wmi-util
 compton-tryone-git
 cppreference-devhelp
-cpupower-gui
 get_iplayer
 google-earth-pro
 hotspot
@@ -15,7 +13,6 @@ jetbrains-toolbox
 networkmanager-dispatcher-chrony
 pagmo-git
 pikaur
-python-distribution
 rr-git
 scc-bin
 svgo
